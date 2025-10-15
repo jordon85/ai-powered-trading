@@ -1,0 +1,101 @@
+{
+  "model_version": "v5",
+  "model_file": "crypto_model_v5.pkl",
+  "trained_at": "2026-03-17T04:27:24.183595+00:00",
+  "target": "multi-horizon log_return",
+  "horizons": [
+    "1h",
+    "6h",
+    "24h"
+  ],
+  "horizon_steps": {
+    "1h": 1,
+    "6h": 6,
+    "24h": 24
+  },
+  "data_window_days": 90,
+  "symbols": [
+    "BTC",
+    "ETH",
+    "SOL",
+    "BNB",
+    "XRP",
+    "ADA",
+    "DOGE",
+    "DOT",
+    "AVAX",
+    "LINK",
+    "THETA",
+    "TDROP"
+  ],
+  "symbol_id_map": {
+    "0": "BTC",
+    "1": "ETH",
+    "2": "SOL",
+    "3": "BNB",
+    "4": "XRP",
+    "5": "ADA",
+    "6": "DOGE",
+    "7": "DOT",
+    "8": "AVAX",
+    "9": "LINK",
+    "10": "THETA",
+    "11": "TDROP"
+  },
+  "features": [
+    "log_return",
+    "log_return_ma7",
+    "log_return_ma14",
+    "volatility_7",
+    "volatility_14",
+    "momentum_7",
+    "momentum_14",
+    "price_ma7_ratio",
+    "price_ma30_ratio",
+    "volume_change",
+    "symbol_id"
+  ],
+  "total_samples": 25308,
+  "horizon_metrics": {
+    "1h": {
+      "cv_r2_mean": -0.0408,
+      "cv_r2_std": 0.0346,
+      "cv_r2_scores": [
+        -0.0991,
+        -0.0438,
+        -0.043,
+        0.0077,
+        -0.0257
+      ],
+      "cv_mae": 0.005359
+    },
+    "6h": {
+      "cv_r2_mean": -0.1015,
+      "cv_r2_std": 0.0526,
+      "cv_r2_scores": [
+        -0.0906,
+        -0.1999,
+        -0.058,
+        -0.0552,
+        -0.1036
+      ],
+      "cv_mae": 0.014163
+    },
+    "24h": {
+      "cv_r2_mean": -0.2184,
+      "cv_r2_std": 0.2149,
+      "cv_r2_scores": [
+        -0.2173,
+        -0.6192,
+        0.0155,
+        -0.1061,
+        -0.1648
+      ],
+      "cv_mae": 0.030366
+    }
+  },
+  "pipeline_steps": [
+    "StandardScaler",
+    "RandomForestRegressor(n=200, depth=15)"
+  ]
+}

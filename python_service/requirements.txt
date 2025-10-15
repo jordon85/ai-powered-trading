@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+requests
+pandas
+web3
+scikit-learn
+beautifulsoup4
+httpx
+cachetools
